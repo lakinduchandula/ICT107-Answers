@@ -35,6 +35,8 @@ int main()
         case 2:
             stayNightPackage();
             break;
+        case 3:
+            return 0;
         default:
             return 1;
             break;
