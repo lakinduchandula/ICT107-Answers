@@ -38,7 +38,7 @@ int main()
         case 3:
             return 0;
         default:
-            return 1;
+            printf("You have enterd incorrect number! Try again...\n");
             break;
         }
     }
@@ -67,6 +67,14 @@ void spendDayPackage()
     scanf("%d", &noAdults);
     printf("Number of Kids      : ");
     scanf("%d", &noKids);
+
+    // check Spend the day package is offered to a group of people with more than five members
+    if (noKids + noAdults < 5)
+    {
+        printf("This package is offered to a group of people with more than five members\n\n");
+        return;
+    }
+
     printf("Do you want to use pool/gym facility (1: yes, 2: no)    : ");
     scanf("%d", &usePoolGym);
 
