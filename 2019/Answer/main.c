@@ -1,7 +1,7 @@
 // this is the answer for B.Sc. (General) Degree First Year First Semester Terminal Course Unit Examination - June 2019
 #include <stdio.h>
 
-#define ADLUT_SPEND_DAY_PKG 6000
+#define ADULT_SPEND_DAY_PKG 6000
 #define KID_SPEND_DAY_PKG 3000
 #define POOL_GYM_SPEND_DAY_PKG 1500
 
@@ -13,7 +13,7 @@ int checkIn();
 void roomAvailability(int type);
 void calculateBill();
 void checkOut();
-void checkAvalability();
+void checkAvailability();
 
 int rooms[40] = {0};
 
@@ -38,7 +38,7 @@ int main()
         case 3:
             return 0;
         default:
-            printf("You have enterd incorrect number! Try again...\n");
+            printf("You have entered incorrect number! Try again...\n");
             break;
         }
     }
@@ -48,7 +48,8 @@ int main()
 
 void mainMenu()
 {
-    printf("---------------------------Main Menue---------------------------\n");
+    printf("\n");
+    printf("---------------------------Main Menu---------------------------\n");
     printf("1. Spend the day package.\n");
     printf("2. Stay the night.\n");
     printf("3. Exit.\n");
@@ -80,7 +81,7 @@ void spendDayPackage()
 
     contentSeparator();
     usePoolGym = usePoolGym < 2 ? 1 : 0;
-    totalAmount = ADLUT_SPEND_DAY_PKG * noAdults + KID_SPEND_DAY_PKG * noKids + POOL_GYM_SPEND_DAY_PKG * usePoolGym;
+    totalAmount = ADULT_SPEND_DAY_PKG * noAdults + KID_SPEND_DAY_PKG * noKids + POOL_GYM_SPEND_DAY_PKG * usePoolGym;
 
     printf("-------------------Spend the day package Bill-------------------\n\n");
     printf("Package Details: %d Adults, %d Kids %s pool/gym facility\n\n", noAdults, noKids, usePoolGym < 2 ? "with" : "without");
@@ -118,7 +119,7 @@ int stayNightPackage()
             checkOut();
             return 0;
         case 4:
-            checkAvalability();
+            checkAvailability();
             return 0;
         default:
             return 1;
@@ -174,7 +175,7 @@ void roomAvailability(int type)
 
 void calculateBill()
 {
-    // variable decalration
+    // variable declaration
     int roomType;
     int noNights;
     int paymentMethod;
@@ -224,16 +225,16 @@ void checkOut()
     if (rooms[roomNumber - 1] != 0)
     {
         rooms[roomNumber - 1] = 0;
-        printf("Room %d is released and now it is avalable for new customers.\n", roomNumber);
+        printf("Room %d is released and now it is available for new customers.\n", roomNumber);
     }
     else
     {
         printf("room number inside %d %d", roomNumber, rooms[roomNumber - 1]);
-        printf("Selected room is already avalable.\n");
+        printf("Selected room is already available.\n");
     }
 }
 
-void checkAvalability()
+void checkAvailability()
 {
     int commaCondition = 0;
 
