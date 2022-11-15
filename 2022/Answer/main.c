@@ -7,9 +7,11 @@
 // global varaible declaration
 double accBalance = 0.0;
 
-void mainMenu();     // function prototype
-void checkBalance(); // function prototype
+void mainMenu();           // function prototype
+void checkBalance();       // function prototype
 void anotherTransaction(); // function prototype
+void atmExit();            // function prototype
+void deposit();            // function prototype
 
 // function main begins program execution
 int main() {
@@ -25,12 +27,13 @@ int main() {
       checkBalance();
       break;
     case 2:
-      printf(" Select 02");
+      deposit();
       break;
     case 3:
       printf(" Select 03");
       break;
     case 4:
+      atmExit();
       return 0;
     default:
       printf("You have entered incorrect number! Try again...\n");
@@ -44,6 +47,7 @@ int main() {
     case 1:
       break;
     case 2:
+      atmExit();
       return 0;
     default:
       printf("You have entered incorrect number! Try again...\n");
@@ -83,3 +87,20 @@ void anotherTransaction() {
   printf("< 1 > Yes \n");
   printf("< 2 > No \n");
 }
+
+// exit function
+void atmExit() {
+  printf("-------------Take you receipt!!!--------------\n");
+  printf("--Thank you for using ATM Banking Machine!!!--\n");
+  printf("------BROUGHT TO YOU BY itsourcecode.com------\n");
+}
+
+// deposit function
+void deposit() {
+  double amount;
+  printf("Enter the amount you want to deposit : ");
+  scanf("%lf", &amount);
+  accBalance += amount;
+  printf("Your New Balance is: $%.2f\n", accBalance);
+}
+
