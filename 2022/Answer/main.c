@@ -9,6 +9,7 @@ double accBalance = 0.0;
 
 void mainMenu();     // function prototype
 void checkBalance(); // function prototype
+void anotherTransaction(); // function prototype
 
 // function main begins program execution
 int main() {
@@ -29,6 +30,21 @@ int main() {
     case 3:
       printf(" Select 03");
       break;
+    case 4:
+      return 0;
+    default:
+      printf("You have entered incorrect number! Try again...\n");
+    }
+
+    printf("\n=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_\n");
+    anotherTransaction();
+
+    scanf("%d", &userResponse);
+    switch (userResponse) {
+    case 1:
+      break;
+    case 2:
+      return 0;
     default:
       printf("You have entered incorrect number! Try again...\n");
     }
@@ -59,4 +75,11 @@ void mainMenu() {
 void checkBalance() {
   printf("You Choose to See you Balance\n\n\n");
   printf("****Your Available balance is : $%.2f\n", accBalance);
+}
+
+// anotherTransaction of ATM
+void anotherTransaction() {
+  printf("Would you like to do another transaction:\n");
+  printf("< 1 > Yes \n");
+  printf("< 2 > No \n");
 }
