@@ -12,6 +12,7 @@ void checkBalance();       // function prototype
 void anotherTransaction(); // function prototype
 void atmExit();            // function prototype
 void deposit();            // function prototype
+void withdraw();           // function prototype
 
 // function main begins program execution
 int main() {
@@ -30,7 +31,7 @@ int main() {
       deposit();
       break;
     case 3:
-      printf(" Select 03");
+      withdraw();
       break;
     case 4:
       atmExit();
@@ -104,3 +105,22 @@ void deposit() {
   printf("Your New Balance is: $%.2f\n", accBalance);
 }
 
+// withdraw function
+void withdraw() {
+  printf("You choose to Withdraw a money\n");
+  printf("$$$$$Your Balance is : $%.2f\n\n", accBalance);
+
+  double amount; // hold withdraw amount
+
+  printf("Enter the amount to withdraw : \n");
+  scanf("%lf", &amount);
+
+  // check whether the amount is greater than the balance
+  if (amount > accBalance) {
+    printf("You have insufficient balance!\n");
+  } else {
+    printf("$$$$Your Withdrawing money is: $%.2f\n", amount);
+    accBalance -= amount;
+    printf("****Your New Balance is: $%.2f\n", accBalance);
+  }
+}
