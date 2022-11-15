@@ -4,7 +4,7 @@
 
 #include <stdio.h>
 
-// global varaible declaration
+// global variable declaration
 double accBalance = 0.0;
 
 void mainMenu();           // function prototype
@@ -67,8 +67,8 @@ void mainMenu() {
 
   printf("****Please choose one of the options below****\n\n");
 
-  printf("< 1 > Check Blance\n");
-  printf("< 2 > Deposite\n");
+  printf("< 1 > Check Balance\n");
+  printf("< 2 > Deposit\n");
   printf("< 3 > Withdraw\n");
   printf("< 4 > Exit\n");
 
