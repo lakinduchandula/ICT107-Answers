@@ -4,8 +4,13 @@
 
 #include <stdio.h>
 
-void mainMenu(); // function prototype
+// global varaible declaration
+double accBalance = 0.0;
 
+void mainMenu();     // function prototype
+void checkBalance(); // function prototype
+
+// function main begins program execution
 int main() {
   for (int x = 2; x > 1; x++) {
     int userResponse;
@@ -16,7 +21,7 @@ int main() {
 
     switch (userResponse) {
     case 1:
-      printf(" Select 01");
+      checkBalance();
       break;
     case 2:
       printf(" Select 02");
@@ -28,12 +33,13 @@ int main() {
       printf("You have entered incorrect number! Try again...\n");
     }
 
-    printf("\n\n");
+    printf("\n");
   }
 
   return 0;
 }
 
+// mainMenu of ATM
 void mainMenu() {
   printf("********************Hello!********************\n");
   printf("************Welcome to ATM Banking************\n\n");
@@ -47,4 +53,10 @@ void mainMenu() {
 
   printf("=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_\n");
   printf("Your Selection : ");
+}
+
+// checkBalance of ATM
+void checkBalance() {
+  printf("You Choose to See you Balance\n\n\n");
+  printf("****Your Available balance is : $%.2f\n", accBalance);
 }
