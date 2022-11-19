@@ -259,3 +259,5 @@ float ratePerKM(int distance) {
     * Since type is a char and the switch (vehicleType, userInput) can use
     * single characters, you could scan for one character using %c instead of %s
 */
+
+// Last Update - 20-11-2022 (Complete Answer)
