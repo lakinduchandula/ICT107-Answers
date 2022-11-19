@@ -19,7 +19,7 @@ int rooms[40] = {0};
 
 int main()
 {
-    for (int x = 2; x > 1; x++)
+    while(1)
     {
         int userResponse;
 
@@ -80,11 +80,11 @@ void spendDayPackage()
     scanf("%d", &usePoolGym);
 
     contentSeparator();
-    usePoolGym = usePoolGym < 2 ? 1 : 0;
-    totalAmount = ADULT_SPEND_DAY_PKG * noAdults + KID_SPEND_DAY_PKG * noKids + POOL_GYM_SPEND_DAY_PKG * usePoolGym;
+    usePoolGym = usePoolGym == 1 ? 1 : 0;
+    totalAmount = ADULT_SPEND_DAY_PKG * noAdults + KID_SPEND_DAY_PKG * noKids + POOL_GYM_SPEND_DAY_PKG * usePoolGym * noAdults;
 
     printf("-------------------Spend the day package Bill-------------------\n\n");
-    printf("Package Details: %d Adults, %d Kids %s pool/gym facility\n\n", noAdults, noKids, usePoolGym < 2 ? "with" : "without");
+    printf("Package Details: %d Adults, %d Kids %s pool/gym facility\n\n", noAdults, noKids, usePoolGym == 1 ? "with" : "without");
     printf("Total Amount: %.2f\n\n", totalAmount);
     contentSeparator();
 }
@@ -290,4 +290,4 @@ void contentSeparator()
     printf("----------------------------------------------------------------\n");
 } 
 
-// Complete Answer - 05-11-2022 Last Updated
+// Complete Answer - 19-11-2022
