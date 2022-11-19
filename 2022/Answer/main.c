@@ -16,7 +16,7 @@ void withdraw();           // function prototype
 
 // function main begins program execution
 int main() {
-  for (int x = 2; x > 1; x++) {
+  while(1) {
     int userResponse;
 
     mainMenu();
